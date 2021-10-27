@@ -12,7 +12,7 @@ import {
     SaluteRequest
 } from '@salutejs/scenario'
 import { SaluteMemoryStorage } from '@salutejs/storage-adapter-memory'
-import { noMatchHandler, pauseHandler, runAppHandler, startHandler, stopHandler, timeHandler } from './handlers'
+import { noMatchHandler, pauseHandler, roundHandler, runAppHandler, startHandler, stopHandler, timeHandler } from './handlers'
 import model from './intents.json'
 import { ScenarioRequest } from './types'
 require('dotenv').config()
@@ -37,6 +37,10 @@ const userScenario = createUserScenario<ScenarioRequest>({
     Time: {
         match: intent('/Время', {confidence: 0.2}),
         handle: timeHandler
+    },
+    Round: {
+        match: intent('/Круг', {confidence: 0.2}),
+        handle: roundHandler
     },
 })
 
