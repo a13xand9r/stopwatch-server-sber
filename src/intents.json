@@ -57,7 +57,12 @@
       "variables": {}
     },
     "/Круг": {
-      "matchers": [],
+      "matchers": [
+        {
+          "type": "phrase",
+          "rule": "круг"
+        }
+      ],
       "variables": {}
     }
   },
