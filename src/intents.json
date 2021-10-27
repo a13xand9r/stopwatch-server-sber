@@ -1,0 +1,61 @@
+{
+  "intents": {
+    "/Старт": {
+      "matchers": [
+        {
+          "type": "phrase",
+          "rule": "старт"
+        },
+        {
+          "type": "phrase",
+          "rule": "запусти"
+        },
+        {
+          "type": "phrase",
+          "rule": "начать"
+        }
+      ],
+      "variables": {}
+    },
+    "/Пауза": {
+      "matchers": [
+        {
+          "type": "phrase",
+          "rule": "пауза"
+        },
+        {
+          "type": "phrase",
+          "rule": "поставь на паузу"
+        },
+        {
+          "type": "phrase",
+          "rule": "останови"
+        }
+      ],
+      "variables": {}
+    },
+    "/Стоп": {
+      "matchers": [
+        {
+          "type": "phrase",
+          "rule": "стоп"
+        },
+        {
+          "type": "phrase",
+          "rule": "сбросить"
+        }
+      ],
+      "variables": {}
+    },
+    "/Время": {
+      "matchers": [
+        {
+          "type": "phrase",
+          "rule": "время"
+        }
+      ],
+      "variables": {}
+    }
+  },
+  "entities": {}
+}
