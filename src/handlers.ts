@@ -11,7 +11,6 @@ export const runAppHandler: ScenarioHandler = ({ req, res }) => {
 }
 
 export const noMatchHandler: ScenarioHandler = async ({ req, res }) => {
-    console.log('state', req.state)
     const keyset = req.i18n(dictionary)
     res.setPronounceText(keyset('404'))
     res.appendSuggestions(['Выйти'])
@@ -72,7 +71,7 @@ export const roundHandler: ScenarioHandler = ({ req, res }) => {
 
     let responseText: string
 
-    if (state?.points?.length && state?.points?.length < 5){
+    if (state?.points && state?.points?.length < 5){
         res.appendCommand({
             type: 'ADD_POINT'
         })

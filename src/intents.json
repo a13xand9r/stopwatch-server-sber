@@ -13,6 +13,14 @@
         {
           "type": "phrase",
           "rule": "начать"
+        },
+        {
+          "type": "phrase",
+          "rule": "поехали"
+        },
+        {
+          "type": "phrase",
+          "rule": "продолжить"
         }
       ],
       "variables": {}
@@ -25,11 +33,11 @@
         },
         {
           "type": "phrase",
-          "rule": "поставь на паузу"
+          "rule": "останови"
         },
         {
           "type": "phrase",
-          "rule": "останови"
+          "rule": "погоди"
         }
       ],
       "variables": {}
@@ -61,6 +69,14 @@
         {
           "type": "phrase",
           "rule": "круг"
+        },
+        {
+          "type": "phrase",
+          "rule": "запиши"
+        },
+        {
+          "type": "phrase",
+          "rule": "запиши круг"
         }
       ],
       "variables": {}

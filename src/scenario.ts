@@ -39,7 +39,7 @@ const userScenario = createUserScenario<ScenarioRequest>({
         handle: timeHandler
     },
     Round: {
-        match: intent('/Круг', {confidence: 0.2}),
+        match:  intent('/Круг', {confidence: 0.2}),
         handle: roundHandler
     },
 })
