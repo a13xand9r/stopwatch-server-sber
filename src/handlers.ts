@@ -8,17 +8,13 @@ export const runAppHandler: ScenarioHandler = ({ req, res }) => {
     let responseText = keyset('Привет')
 
     res.setPronounceText(responseText)
-    res.appendBubble(responseText)
-    res.setAutoListening(true)
-    res.appendSuggestions(['Помощь', 'Выйти'])
 }
 
 export const noMatchHandler: ScenarioHandler = async ({ req, res }) => {
     console.log('state', req.state)
     const keyset = req.i18n(dictionary)
-    res.appendBubble(keyset('404'))
     res.setPronounceText(keyset('404'))
-    res.appendSuggestions(['Поменять номер', 'Выйти'])
+    res.appendSuggestions(['Выйти'])
 }
 
 export const startHandler: ScenarioHandler = ({ req, res }) => {
