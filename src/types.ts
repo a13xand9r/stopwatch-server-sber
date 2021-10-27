@@ -12,6 +12,7 @@ export interface ScenarioAppState extends AppState {
     m?: number;
     h?: number;
     isGoing?: boolean;
+    points?: string[];
 }
 
 export interface ScenarioIntentsVariables extends SaluteRequestVariable {

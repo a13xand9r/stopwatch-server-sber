@@ -55,6 +55,10 @@
         }
       ],
       "variables": {}
+    },
+    "/Круг": {
+      "matchers": [],
+      "variables": {}
     }
   },
   "entities": {}

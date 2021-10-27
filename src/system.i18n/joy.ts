@@ -55,4 +55,15 @@ export const joy = {
         one: '<say-as interpret-as="cardinal" format="feminine_nominative">{count}</say-as> секунда',
         some: '<say-as interpret-as="cardinal" format="feminine_nominative">{count}</say-as> секунды',
     },
+    'Круг': [
+        'Записала круг',
+        'Записала',
+        'Готово',
+    ],
+    'Максимум кругов': [
+        'Можно только 5 кругов',
+        'Всего можно 5 кругов',
+        'Максимум можно 5 кругов',
+        '5 кругов - это максимум',
+    ]
 };

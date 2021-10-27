@@ -66,10 +66,23 @@ export const timeHandler: ScenarioHandler = ({ req, res }) => {
     console.log(state?.h, state?.m, state?.s)
     const responseText =
         `<speak>${keyset('Время')}${keyset('Часы', { count: state?.h })} ${keyset('Минуты', { count: state?.m })}, ${keyset('Секунды', { count: state?.s })}</speak>`
-//<say-as interpret-as="ordinal" format="feminine_nominative"></say-as>
-    console.log('keyset(Часы), { count: state?.h }', keyset('Часы'), { count: state?.h })
-    console.log('responseText', responseText)
 
     res.setPronounceText(responseText, {ssml: true})
+}
+
+export const roundHandler: ScenarioHandler = ({ req, res }) => {
+    const keyset = req.i18n(dictionary)
+    const state = req.state
+
+    let responseText: string
+
+    if (state?.points?.length && state?.points?.length < 5){
+        res.appendCommand({
+            type: 'ADD_POINT'
+        })
+        responseText = keyset('Круг')
+    } else responseText = keyset('Максимум кругов')
+
+    res.setPronounceText(responseText)
 }
 
