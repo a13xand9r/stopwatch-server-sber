@@ -60,7 +60,7 @@ export const timeHandler: ScenarioHandler = ({ req, res }) => {
 
     console.log(state?.h, state?.m, state?.s)
     const responseText =
-        `<speak>${keyset('Время')}${keyset('Часы', { count: state?.h })} ${keyset('Минуты', { count: state?.m })}, ${keyset('Секунды', { count: state?.s as number + 1 })}</speak>`
+        `<speak>${keyset('Время')}${keyset('Часы', { count: state?.h })} ${keyset('Минуты', { count: state?.m })}, ${keyset('Секунды', { count: state?.s as number + 2 })}</speak>`
 
     res.setPronounceText(responseText, {ssml: true})
 }
