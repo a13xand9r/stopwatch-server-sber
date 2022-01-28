@@ -64,6 +64,11 @@ export const timeHandler: ScenarioHandler = ({ req, res }) => {
 
     res.setPronounceText(responseText, {ssml: true})
 }
+export const requestTimeHandler: ScenarioHandler = ({ req, res }) => {
+    res.appendCommand({
+        type: 'GET_CURRENT_TIME'
+    })
+}
 
 export const roundHandler: ScenarioHandler = ({ req, res }) => {
     const keyset = req.i18n(dictionary)

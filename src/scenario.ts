@@ -12,14 +12,14 @@ import {
     SaluteRequest
 } from '@salutejs/scenario'
 import { SaluteMemoryStorage } from '@salutejs/storage-adapter-memory'
-import { noMatchHandler, pauseHandler, roundHandler, runAppHandler, startHandler, stopHandler, timeHandler } from './handlers'
+import { noMatchHandler, pauseHandler, requestTimeHandler, roundHandler, runAppHandler, startHandler, stopHandler, timeHandler } from './handlers'
 import model from './intents.json'
 import { ScenarioRequest } from './types'
 require('dotenv').config()
 
 const storage = new SaluteMemoryStorage()
 const intents = createIntents(model.intents)
-const { intent } = createMatchers<ScenarioRequest, typeof intents>()
+const { intent, action } = createMatchers<ScenarioRequest, typeof intents>()
 
 const userScenario = createUserScenario<ScenarioRequest>({
     Start: {
@@ -36,6 +36,10 @@ const userScenario = createUserScenario<ScenarioRequest>({
     },
     Time: {
         match: intent('/Время', {confidence: 0.2}),
+        handle: requestTimeHandler
+    },
+    RequestTime: {
+        match: action('CURRENT_TIME'),
         handle: timeHandler
     },
     Round: {
